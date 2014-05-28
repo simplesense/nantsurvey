@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Desklocation:</strong>
+  <%= @standupdesk.desklocation %>
+</p>
+
+<p>
+  <strong>Deskwant:</strong>
+  <%= @standupdesk.deskwant %>
+</p>
+
+<%= link_to 'Edit', edit_standupdesk_path(@standupdesk) %> |
+<%= link_to 'Back', standupdesks_path %>

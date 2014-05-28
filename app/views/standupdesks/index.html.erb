@@ -1,0 +1,27 @@
+<h1>Listing standupdesks</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Desklocation</th>
+      <th>Deskwant</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @standupdesks.each do |standupdesk| %>
+      <tr>
+        <td><%= standupdesk.desklocation %></td>
+        <td><%= standupdesk.deskwant %></td>
+        <td><%= link_to 'Show', standupdesk %></td>
+        <td><%= link_to 'Edit', edit_standupdesk_path(standupdesk) %></td>
+        <td><%= link_to 'Destroy', standupdesk, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Standupdesk', new_standupdesk_path %>
