@@ -9,33 +9,33 @@ class StandupdesksController < ApplicationController
   end
 
   def new
-    @standupdesk = Standupdesk.new
+    @standupdesk = current_user.standupdesk.build
   end
 
   def edit
   end
 
   def create
-    @standupdesk = Standupdesk.new(standupdesk_params)
+    @standupdesk = current_user.standupdesk.build(standupdesk_params)
 
       if @standupdesk.save
         redirect_to @standupdesk, notice: 'Standupdesk was successfully created.'
       else
-        render action:new
+        render action: 'new'
       end
   end
 
-  def update|
+  def update
       if @standupdesk.update(standupdesk_params)
         redirect_to @standupdesk, notice: 'Standupdesk was successfully updated.'
       else
-        render action:edit
+        render action: 'edit'
       end
   end
 
   def destroy
     @standupdesk.destroy
-      redirect_to standupdesks_url, notice: 'Standupdesk was successfully destroyed.'
+      redirect_to standupdesks_url
   end
 
   private

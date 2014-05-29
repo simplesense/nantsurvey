@@ -1,27 +1,11 @@
-<h1>Listing standupdesks</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Desklocation</th>
-      <th>Deskwant</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @standupdesks.each do |standupdesk| %>
-      <tr>
-        <td><%= standupdesk.desklocation %></td>
-        <td><%= standupdesk.deskwant %></td>
-        <td><%= link_to 'Show', standupdesk %></td>
-        <td><%= link_to 'Edit', edit_standupdesk_path(standupdesk) %></td>
-        <td><%= link_to 'Destroy', standupdesk, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Standupdesk', new_standupdesk_path %>
+<div class="jumbotron center">
+     <h1>Take the Standup Desk Survey Now!</h1>
+     <% if user_signed_in? %>
+        <%= link_to "Start Survey", new_standupdesk_path, class: "btn btn-info btn-lg" %>
+     <% else %>
+       <p>
+         <%= link_to "Log in", new_user_session_path, class: "btn btn-default btn-lg" %>
+         <%= link_to "Sign up", new_user_registration_path, class: "btn btn-primary btn-lg" %>
+       </p>
+  <% end %>  
+</div>
