@@ -8,19 +8,19 @@
       <span class="icon-bar"></span>
       <span class="icon-bar"></span>
     </button>
-    <a class="navbar-brand" href="#">NantSurvey</a>
+    <a class="navbar-brand" href="#">NantSurvey <em><small>(beta)</small></em></a>
   </div>
 
   <!-- Collect the nav links, forms, and other content for toggling -->
   <div class="collapse navbar-collapse navbar-ex1-collapse">
     <ul class="nav navbar-nav navbar-right">
-        <li><%= link_to "Home", root_path %></li>
-        <li><%= link_to "About", about_path %></li>
+        <li><%= link_to "HOME", root_path %></li>
+<!--         <li><%= link_to "ABOUT", about_path %></li> -->
         <% if user_signed_in? %>
-          <li><%= link_to "Account Settings", edit_user_registration_path %></li>
-          <li><%= link_to "Log out", destroy_user_session_path, method: :delete %></li>
+          <li><%= link_to "SETTINGS", edit_user_registration_path %></li>
+          <li><%= link_to "LOG OUT", destroy_user_session_path, method: :delete %></li>
         <% else %>
-          <li><%= link_to "Sign in", new_user_session_path %></li>
+          <li><%= link_to "SIGN IN", new_user_session_path %></li>
         <% end %>
     </ul>
   </div><!-- /.navbar-collapse -->
