@@ -11,12 +11,12 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :desklocation %><br>
-    <%= f.text_field :desklocation %>
+  <div class="form-group">
+    <%= f.label :desklocation %>
+    <%= f.text_field :desklocation, autofocus: true, class: "form-control" %>
   </div>
-  <div class="field">
-    <%= f.label :deskwant %><br>
+  <div class="form-group">
+    <%= f.label :deskwant %>
     <%= f.check_box :deskwant %>
   </div>
   <div class="actions">

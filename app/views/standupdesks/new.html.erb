@@ -1,5 +1,9 @@
-<h1>New standupdesk</h1>
-
-<%= render 'form' %>
-
-<%= link_to 'Back', standupdesks_path %>
+<div class="panel panel-default">
+  <div class="panel-heading">
+	<h1>Complete the Survey, <%= current_user.name %>!</h1>
+	</div>
+	<div class="panel-body">
+	<%= render 'form' %>
+	</div>
+	<%= link_to 'Back', root_path %>
+</div>
