@@ -12,11 +12,11 @@
   <% end %>
 
   <div class="form-group">
-    <%= f.label :desklocation %>
+    <%= f.label :desklocation, 'Primary location (Panama City or Dallas)' %>
     <%= f.text_field :desklocation, autofocus: true, class: "form-control" %>
   </div>
   <div class="form-group">
-    <%= f.label :deskwant %>
+    <%= f.label :deskwant, 'Check if you are interested in a Standup Desk' %> 
     <%= f.check_box :deskwant %>
   </div>
   <div class="actions">
