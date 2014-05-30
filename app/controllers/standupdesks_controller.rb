@@ -1,11 +1,18 @@
 class StandupdesksController < ApplicationController
   before_action :set_standupdesk, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!, except: [:index, :show]
+  before_action :correct_user, only: [:edit, :update, :destroy]
 
   def index
-    @standupdesks = Standupdesk.all
+    if user_signed_in?
+      @standupdesks = Standupdesk.all
+    else
+      redirect_to new_user_session_url
+    end
   end
 
   def show
+    redirect_to standupdesks_url
   end
 
   def new
@@ -42,6 +49,11 @@ class StandupdesksController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_standupdesk
       @standupdesk = Standupdesk.find(params[:id])
+    end
+
+    def correct_user
+      @standupdesk = current_user.standupdesk.find_by(id: params[:id])
+      redirect_to standupdesks_path, notice: "Not authorized to edit this survey" if @standupdesk.nil?
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
