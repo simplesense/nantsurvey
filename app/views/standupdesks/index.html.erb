@@ -1,10 +1,12 @@
-<div class="jumbotron">
+<h1>Survey Results!</h1>
      <% if user_signed_in? %>
-     <h1>Survey Results!</h1>
-	     	<%= pie_chart Standupdesk.group(:desklocation).count %>
+     <div class="well">
+     	<%= pie_chart Standupdesk.group(:desklocation).count %>
+     </div>
+        <%= link_to "Start Survey", new_standupdesk_path, class: "btn btn-info btn-lg" %>
      <% else %>
-     <h1></h1>
-	         <%= link_to "Log in", new_user_session_path, class: "btn btn-default btn-lg" %>
-	         <%= link_to "Sign up", new_user_registration_path, class: "btn btn-primary btn-lg" %>
- 	 <% end %>
-</div>
+       <p>
+         <%= link_to "Log in", new_user_session_path, class: "btn btn-default btn-lg" %>
+         <%= link_to "Sign up", new_user_registration_path, class: "btn btn-primary btn-lg" %>
+       </p>
+  <% end %>
