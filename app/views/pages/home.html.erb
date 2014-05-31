@@ -1,35 +1,67 @@
-<div class="jumbotron center">
-     <% if user_signed_in? %>
-     <img src="http://act-model.com/img/Your-Opinion-Matters.gif" class="img-responsive img-rounded center-block">
-     <% else %>
+
+  <% if user_signed_in? %>
+     <img src="" class="img-responsive img-rounded center-block">
+  <% else %>
+  <div class="jumbotron center">
      <h1>Welcome to NantSurvey</h1>
 		<img src="https://farm4.staticflickr.com/3262/3182139791_49f8495439.jpg" class="img-responsive img-rounded center-block">
         <%= link_to "Log in", new_user_session_path, class: "btn btn-info btn-lg" %>
         <%= link_to "Sign up", new_user_registration_path, class: "btn btn-primary btn-lg" %>
-        <% end %>
-      </div>
+        </div>
+  <% end %>
+
 <% if user_signed_in? %>
 <div class="well">
 <table class="table table-striped">
       <thead>
         <tr>
           <th>#</th>
-          <th>Survey Name</th>
+          <th>Name</th>
           <th>Description</th>
         </tr>
       </thead>
       <tbody>
         <tr>
           <td>1</td>
-          <td>Height Adjustable Desk</td>
+          <td><strong>Height Adjustable Desk</strong></td>
           <td>Would you like a standup desk or height adjustable desk, then take this survey and make your voice heard!	</td>
           <td><%= link_to "Start Survey", new_standupdesk_path, class: "btn btn-primary btn-small" %></td>
         </tr>
         <tr>
           <td>2</td>
-          <td>USABILITY FEEDBACK</td>
-          <td>Jacob</td>
-          <td><%= link_to "Coming Soon", "#", class: "btn btn-info btn-small", disabled: true %></td>
+          <td><strong>Usability Testing 001</strong></td>
+          <td>Coming soon...</td>
+          <td><%= link_to "Coming Soon", "#", class: "btn btn-primary btn-small", disabled: true %></td>
+        </tr>
+        <tr>
+          <td>2</td>
+          <td><strong>Usability Testing 002</strong></td>
+          <td>Coming soon...</td>
+          <td><%= link_to "Coming Soon", "#", class: "btn btn-primary btn-small", disabled: true %></td>
+        </tr>
+        <tr>
+          <td>2</td>
+          <td><strong>Usability Testing 003</strong></td>
+          <td>Coming soon...</td>
+          <td><%= link_to "Coming Soon", "#", class: "btn btn-primary btn-small", disabled: true %></td>
+        </tr>
+        <tr>
+          <td>2</td>
+          <td><strong>Usability Testing 004</strong></td>
+          <td>Coming soon...</td>
+          <td><%= link_to "Coming Soon", "#", class: "btn btn-primary btn-small", disabled: true %></td>
+        </tr>
+        <tr>
+          <td>2</td>
+          <td><strong>Usability Testing 005</strong></td>
+          <td>Coming soon...</td>
+          <td><%= link_to "Coming Soon", "#", class: "btn btn-primary btn-small", disabled: true %></td>
+        </tr>
+        <tr>
+          <td>2</td>
+          <td><strong>Usability Testing 006</strong></td>
+          <td>Coming soon...</td>
+          <td><%= link_to "Coming Soon", "#", class: "btn btn-primary btn-small", disabled: true %></td>
         </tr>
       </tbody>
     </table>

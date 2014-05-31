@@ -1,10 +1,12 @@
-<div class="jumbotron">
-     <% if user_signed_in? %>
-     <h1>Survey Results!</h1>
-	     	<%= pie_chart Standupdesk.group(:desklocation).count %>
-     <% else %>
-     <h1></h1>
-	         <%= link_to "Log in", new_user_session_path, class: "btn btn-default btn-lg" %>
-	         <%= link_to "Sign up", new_user_registration_path, class: "btn btn-primary btn-lg" %>
- 	 <% end %>
+<div class="well">
+	<% if user_signed_in? %>
+  	<h3>Dallas vs. Panama City</h3>
+	 	<p><%= pie_chart Standupdesk.group(:desklocation).count %></p><br>
+	 	<h3>Would like a desk</h3>
+	 	<p><%= pie_chart Standupdesk.group(:deskwant).count %></p>
+  <% else %>
+  	<h1></h1>
+	  <%= link_to "Log in", new_user_session_path, class: "btn btn-default btn-lg" %>
+	  <%= link_to "Sign up", new_user_registration_path, class: "btn btn-primary btn-lg" %>
+ 	<% end %>
 </div>
