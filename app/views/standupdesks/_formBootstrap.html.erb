@@ -1,0 +1,11 @@
+<%= simple_form_for(@standupdesk) do |f| %>
+  <%= f.input :desklocation, prompt: 'Select Your Primary Location:',
+    collection: [
+      'dallas',
+      'panama city'] %>
+
+  <%= f.input :deskwant, label: 'Are you interested in a Standup Desk?', as: :radio_buttons,
+    collection: ['true', 'false'], wrapper: :vertical_radio_and_checkboxes  %>
+
+  <%= f.button :submit, 'Submit', :class => "btn btn-primary btn-large" %>
+<% end %>
